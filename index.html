@@ -13,14 +13,13 @@
     <title>AR Test</title>
 </head>
 <script>
-
     AFRAME.registerComponent('markerhandler', {
       init: function () {
-        this.el.sceneEL.addEventListener('click', () => {
+        this.el.sceneEl.addEventListener('click', () => {
           // redirect to custom URL
           alert('Test!');
-      });}
-    });
+      })}
+    })
   </script>
 
 <body style="margin: 0; overflow: hidden;">
@@ -35,10 +34,11 @@
             markerhandler
             src="./test.png"
             look-at="[gps-camera]"
-            scale="1 1 1"
-            gps-entity-place="latitude: 22.2800587; longitude: 114.1718574;">
+            scale="0.5 0.5 0.5"
+            gps-entity-place="latitude: 22.2800558; longitude: 114.1718627;">
         </a-image>
         
+
     <a-camera gps-camera rotation-reader></a-camera>
 </a-scene>
 </body>

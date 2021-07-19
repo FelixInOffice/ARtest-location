@@ -13,13 +13,11 @@
     <title>AR Test</title>
 </head>
 <script>
-    AFRAME.registerComponent('clickhandler', {
-        init: function() {
-            this.el.addEventListener('click', () => {
-                alert('Clicked!');
-            });
-        }
-    });
+    AFRAME.registerComponent('peakfinder', {
+    init: function() {
+        alert('Peakfinder component initialising!');
+    }
+});
 </script>
 
 <body style="margin: 0; overflow: hidden;">
@@ -29,7 +27,7 @@
     loading-screen="enabled: false;"
     arjs="sourceType: webcam; debugUIEnabled: false;">
         <a-image
-            clickhandler
+            peakfinder
             src="./test.png"
             look-at="[gps-camera]"
             scale="1 1 1"

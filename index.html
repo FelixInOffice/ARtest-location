@@ -15,7 +15,7 @@
 <script>
     AFRAME.registerComponent('clickhandler', {
         init: function() {
-            this.el.addEventListener('click', () => {
+            this.ev.addEventListener('click', () => {
                 alert('Clicked!');
             });
         }
@@ -32,7 +32,7 @@
             clickhandler
             src="./test.png"
             look-at="[gps-camera]"
-            scale="20 20 20"
+            scale="1 1 1"
             gps-entity-place="latitude: 22.2800546; longitude: 114.1718505;">
         </a-image>
 

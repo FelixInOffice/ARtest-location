@@ -19,17 +19,8 @@
         this.el.sceneEL.addEventListener('click', () => {
           // redirect to custom URL
           alert('Test!');
-      })}
-    })
-
-
-    AFRAME.registerComponent('markerhandler2', {
-      init: function () {
-        this.el.sceneEL.addEventListener('click', () => {
-          // redirect to custom URL
-          alert('Test22!');
-      })}
-    })
+      });}
+    });
   </script>
 
 <body style="margin: 0; overflow: hidden;">
@@ -47,16 +38,7 @@
             scale="1 1 1"
             gps-entity-place="latitude: 22.2800587; longitude: 114.1718574;">
         </a-image>
-
-        <a-image
-            markerhandler2
-            src="./test.png"
-            look-at="[gps-camera]"
-            scale="1 1 1"
-            gps-entity-place="latitude: 22.2800537; longitude: 114.1718609;">
-        </a-image>
         
-
     <a-camera gps-camera rotation-reader></a-camera>
 </a-scene>
 </body>

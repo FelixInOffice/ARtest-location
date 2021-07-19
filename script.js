@@ -1,21 +1,17 @@
-window.onload = () => {
-    const scene = document.querySelector('a-scene');
-    // add place icon
-    const icon = document.createElement('a-image');
-    icon.setAttribute('gps-entity-place', `latitude: 22.2800551; longitude: 114.171857;`);
-    icon.setAttribute('name', place.name);
-    icon.setAttribute('src', './test.png');
-    icon.setAttribute('scale', '0.5, 0.5, 0.5');
+AFRAME.registerComponent('markerhandler', {
 
-    const clickListener = function(ev) {
-        ev.stopPropagation();
-        ev.preventDefault();
+    init: function() {
+        const animatedMarker = document.querySelector("#animated-marker");
+        const aEntity = document.querySelector("#animated-model");
 
-        alert("test");
-
-    };
-
-    icon.addEventListener('click', clickListener);
-
-    scene.appendChild(icon);
-};
+        // every click, we make our model grow in size :)
+        animatedMarker.addEventListener('click', function(ev, target){
+            alert("test");
+            const intersectedElement = ev && ev.detail && ev.detail.intersectedEl;
+            if (aEntity && intersectedElement === aEntity) {
+                const scale = aEntity.getAttribute('scale');
+                Object.keys(scale).forEach((key) => scale[key] = scale[key] + 1);
+                aEntity.setAttribute('scale', scale);
+            }
+        });
+}});

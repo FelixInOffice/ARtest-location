@@ -16,10 +16,18 @@
 
     AFRAME.registerComponent('markerhandler', {
       init: function () {
-        //const imageEl = document.querySelector('a-image');
         this.el.sceneEL.addEventListener('click', () => {
           // redirect to custom URL
-          window.location = 'https://google.com';
+          alert('Test!');
+      })}
+    })
+
+
+    AFRAME.registerComponent('markerhandler2', {
+      init: function () {
+        this.el.sceneEL.addEventListener('click', () => {
+          // redirect to custom URL
+          alert('Test22!');
       })}
     })
   </script>
@@ -36,8 +44,16 @@
             markerhandler
             src="./test.png"
             look-at="[gps-camera]"
-            scale="0.5 0.5 0.5"
-            gps-entity-place="latitude: 22.2800661; longitude: 114.1718587;">
+            scale="1 1 1"
+            gps-entity-place="latitude: 22.2800587; longitude: 114.1718574;">
+        </a-image>
+
+        <a-image
+            markerhandler2
+            src="./test.png"
+            look-at="[gps-camera]"
+            scale="1 1 1"
+            gps-entity-place="latitude: 22.2800537; longitude: 114.1718609;">
         </a-image>
         
 

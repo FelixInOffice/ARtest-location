@@ -15,7 +15,7 @@
     AFRAME.registerComponent('clickhandler', {
         init: function() {
             this.el.addEventListener('click', () => {
-                alert('Clicked!')
+                alert('Clicked!');
             });
     }});
 </script>
@@ -24,10 +24,10 @@
     <a-scene
     cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;'
     raycaster="objects: [clickhandler];"
+    vr-mode-ui="enabled: false"
     embedded
     loading-screen="enabled: false;"
-    arjs="sourceType: webcam; debugUIEnabled: false;"
-    >
+    arjs="sourceType: webcam; debugUIEnabled: false;">
         <a-image
             clickhandler
             src="./test.png"

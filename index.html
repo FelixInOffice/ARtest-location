@@ -13,8 +13,10 @@
     <title>AR Test</title>
 </head>
 <script>
+
     AFRAME.registerComponent('markerhandler', {
       init: function () {
+        const imageEl = document.querySelector('a-image');
         this.el.imageEl.addEventListener('click', () => {
           // redirect to custom URL
           window.location = 'https://google.com';

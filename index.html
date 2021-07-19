@@ -16,12 +16,12 @@
     embedded
     loading-screen="enabled: false;"
     arjs="sourceType: webcam; debugUIEnabled: false;"
->
+    >
         <a-image
-            clickhandler
+            markerhandler
             src="./test.png"
             look-at="[gps-camera]"
-            scale="1 1 1"
+            scale="0.5 0.5 0.5"
             gps-entity-place="latitude: 22.2800547; longitude: 114.1718585;"
         ></a-image>
 
@@ -29,12 +29,13 @@
 </a-scene>
 
 <script>
-    AFRAME.registerComponent('clickhandler', {
-        init: function() {
-            this.el.addEventListener('click', () => {
-                alert('Clicked!')
-            });
+    AFRAME.registerComponent('markerhandler', {
+      init: function () {
+        this.el.sceneEl.addEventListener('markerFound', () => {
+          // redirect to custom URL
+          window.location = 'https://github.com/AR-js-org/AR.js';
+        });
     }});
-</script>
+  </script>
 </body>
 </html>

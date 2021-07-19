@@ -15,7 +15,7 @@
 <script>
     AFRAME.registerComponent('markerhandler', {
       init: function () {
-        this.el.sceneEl.addEventListener('imageFound', () => {
+        this.el.sceneEl.addEventListener('click', () => {
           // redirect to custom URL
           window.location = 'https://google.com';
       })}

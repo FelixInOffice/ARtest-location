@@ -14,14 +14,6 @@
 
     <title>AR Test</title>
 </head>
-<script>
-    AFRAME.registerComponent('clickhandler', {
-        init: function() {
-            this.el.addEventListener('click', () => {
-                alert('Clicked!');
-            });
-    }});
-</script>
 
 <body style="margin: 0; overflow: hidden;">
 <a-scene
@@ -43,7 +35,7 @@
                 </a-entity>
         </a-image>
 
-    <a-camera gps-camera rotation-reader simulateLatitude='22.2800551' simulateLongitude='114.171857'></a-camera>
+    <a-camera gps-camera="simulateLatitude=22.2800551; simulateLongitude=114.171857" rotation-reader></a-camera>
 </a-scene>
 </body>
 </html>

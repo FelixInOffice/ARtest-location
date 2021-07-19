@@ -20,6 +20,7 @@
     loading-screen="enabled: false;"
     arjs="sourceType: webcam; debugUIEnabled: false;">
         <a-image
+            id="animated-marker"
             markerhandler
             src="./test.png"
             look-at="[gps-camera]"
@@ -28,8 +29,7 @@
 
                 <a-entity
                     id="animated-model"
-                    gltf-model="#animated-asset"
-                    scale="0.5">
+                    scale="2">
                 </a-entity>
         </a-image>
 

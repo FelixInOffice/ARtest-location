@@ -18,13 +18,23 @@
     arjs="sourceType: webcam; debugUIEnabled: false;"
 >
         <a-image
+            clickhandler
             src="./test.png"
             look-at="[gps-camera]"
             scale="1 1 1"
-            gps-entity-place="latitude: 22.280093; longitude: 114.1719767;"
+            gps-entity-place="latitude: 22.2800547; longitude: 114.1718585;"
         ></a-image>
 
     <a-camera gps-camera rotation-reader></a-camera>
 </a-scene>
+
+<script>
+    AFRAME.registerComponent('clickhandler', {
+        init: function() {
+            this.el.addEventListener('click', () => {
+                alert('Clicked!')
+            });
+    }});
+</script>
 </body>
 </html>

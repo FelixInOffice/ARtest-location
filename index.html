@@ -11,14 +11,24 @@
 
     <title>AR Test</title>
 </head>
+<script>
+    AFRAME.registerComponent('clickhandler', {
+        init: function() {
+            this.el.addEventListener('click', () => {
+                alert('Clicked!')
+            });
+    }});
+</script>
+
 <body style="margin: 0; overflow: hidden;">
     <a-scene
+    raycaster="objects: [clickhandler];"
     embedded
     loading-screen="enabled: false;"
     arjs="sourceType: webcam; debugUIEnabled: false;"
     >
         <a-image
-            markerhandler
+            clickhandler
             src="./test.png"
             look-at="[gps-camera]"
             scale="0.5 0.5 0.5"
@@ -27,15 +37,5 @@
 
     <a-camera gps-camera rotation-reader></a-camera>
 </a-scene>
-
-<script>
-    AFRAME.registerComponent('markerhandler', {
-      init: function () {
-        this.el.sceneEl.addEventListener('markerFound', () => {
-          // redirect to custom URL
-          window.location = 'https://github.com/AR-js-org/AR.js';
-        });
-    }});
-  </script>
 </body>
 </html>

@@ -23,8 +23,6 @@
 <body style="margin: 0; overflow: hidden;">
 
 <a-scene
-    cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;'
-    raycaster="objects: [clickhandler];"
     vr-mode-ui="enabled: false"
     embedded
     loading-screen="enabled: false;"
@@ -34,8 +32,18 @@
             src="./test.png"
             look-at="[gps-camera]"
             scale="0.5 0.5 0.5"
-            gps-entity-place="latitude: 22.2800612; longitude: 114.1718628;"
-        ></a-image>
+            gps-entity-place="latitude: 22.2800622; longitude: 114.171835;">
+    
+            <a-entity
+                id="bowser-model"
+                scale="0.16843451265612813 0.16843451265612813 0.16843451265612813"
+                animation-mixer="loop: repeat"
+                gltf-model="#animated-asset"
+                class="clickable"
+                gesture-handler>
+            </a-entity>
+
+        </a-image>
 
     <a-camera gps-camera rotation-reader></a-camera>
 </a-scene>

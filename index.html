@@ -16,10 +16,10 @@
 
     AFRAME.registerComponent('markerhandler', {
       init: function () {
-        const imageEl = document.querySelector('a-image');
-        this.el.sceneEL.imageEl.addEventListener('click', () => {
+        //const imageEl = document.querySelector('a-image');
+        this.el.sceneEL.addEventListener('click', () => {
           // redirect to custom URL
-          window.location = 'https://google.com';
+          alert('test');
       })}
     })
   </script>
@@ -34,8 +34,6 @@
   >
         <a-image
             markerhandler
-            href="https://google.com"
-            onclick="alert('test');"
             src="./test.png"
             look-at="[gps-camera]"
             scale="0.5 0.5 0.5"

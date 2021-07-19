@@ -20,17 +20,12 @@
     loading-screen="enabled: false;"
     arjs="sourceType: webcam; debugUIEnabled: false;">
         <a-image
-            id="animated-marker"
             markerhandler
+            id="animated-marker"
             src="./test.png"
             look-at="[gps-camera]"
             scale="0.5 0.5 0.5"
             gps-entity-place="latitude: 22.2800546; longitude: 114.1718505;">
-
-                <a-entity
-                    id="animated-model"
-                    scale="2">
-                </a-entity>
         </a-image>
 
     <a-camera gps-camera rotation-reader></a-camera>

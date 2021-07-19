@@ -15,9 +15,9 @@
 <script>
     AFRAME.registerComponent('peakfinder', {
     init: function() {
-        this.addEventListener('click', function () {
+        this.el.addEventListener('click', function () {
             alert('Peakfinder component initialising!');
-        })
+        });
     }
 });
 </script>
@@ -28,13 +28,13 @@
     embedded
     loading-screen="enabled: false;"
     arjs="sourceType: webcam; debugUIEnabled: false;">
-        <a-image
+        <a-entity
             peakfinder
             src="./test.png"
             look-at="[gps-camera]"
             scale="1 1 1"
             gps-entity-place="latitude: 22.2800558; longitude: 114.1718627;">
-        </a-image>
+        </a-entity>
         
 
     <a-camera gps-camera rotation-reader></a-camera>
